@@ -45,7 +45,6 @@ const App: React.FC = () => (
 				<Route
 					component={Menu}
 					path='/app'
-					exact
 				/>
 			</IonRouterOutlet>
 		</IonReactRouter>
