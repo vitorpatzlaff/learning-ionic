@@ -9,13 +9,14 @@ import {
 	IonItem,
 	IonMenuToggle,
 	IonSplitPane,
-	IonIcon
+	IonIcon,
+	IonButton
 } from '@ionic/react'
 import React from 'react'
 import { Redirect, Route } from 'react-router'
 import List from './List'
 import Settings from './Settings'
-import { homeOutline, newspaperOutline } from 'ionicons/icons'
+import { homeOutline, logOutOutline, newspaperOutline } from 'ionicons/icons'
 
 const Menu: React.FC = () => {
 	const paths = [
@@ -28,7 +29,7 @@ const Menu: React.FC = () => {
 			<IonSplitPane contentId='main'>
 				<IonMenu contentId='main'>
 					<IonHeader>
-						<IonToolbar color='secondary'>
+						<IonToolbar color='primary'>
 							<IonTitle>Menu</IonTitle>
 						</IonToolbar>
 					</IonHeader>
@@ -38,6 +39,7 @@ const Menu: React.FC = () => {
 								key={index}
 								autoHide={false}>
 								<IonItem
+									detail={false}
 									routerLink={item.url}
 									routerDirection='none'>
 									<IonIcon
@@ -48,6 +50,21 @@ const Menu: React.FC = () => {
 								</IonItem>
 							</IonMenuToggle>
 						))}
+
+						<IonMenuToggle autoHide={false}>
+							<IonButton
+								expand='full'
+								routerLink='/'
+								routerDirection='root'
+								className='ion-margin'
+								color='secondary'>
+								<IonIcon
+									slot='start'
+									icon={logOutOutline}
+								/>
+								Logout
+							</IonButton>
+						</IonMenuToggle>
 					</IonContent>
 				</IonMenu>
 
