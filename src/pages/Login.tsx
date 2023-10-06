@@ -102,6 +102,7 @@ const Login: React.FC = () => {
 										<IonCardContent>
 											<form onSubmit={doLogin}>
 												<IonInput
+													// mode='md'
 													label='Email'
 													type='email'
 													placeholder='email@example.com'
@@ -111,6 +112,7 @@ const Login: React.FC = () => {
 
 												<IonInput
 													className='ion-margin-top'
+													// mode='md'
 													label='Password'
 													type='password'
 													labelPlacement='floating'
